@@ -21,7 +21,7 @@ def transversity_to_helicity(ta):
 def helicity_amps_v(q2, mB, mV, mqh, mql, ml1, ml2, ff, wc, prefactor):
     laB = lambda_K(mB**2, mV**2, q2)
     H = {}
-    H['0','V'] = (4 * 1j * mB * mV)/(sqrt(q2) * (mB+mV)) * ((wc['v']-wc['vp']) * (mB+mV) * ff['A12']+mqh * (wc['7']-wc['7p']) * ff['T23'])
+    H['0','V'] = (4 * 1j * mB * mV)/(sqrt(q2) * (mB+mV)) * ((wc['v']-wc['vp']) * (mB+mV) * ff['A12']+mqh * (wc['7']-wc['7p']) * ff['T23'])+5
     H['0','A'] = 4 * 1j * mB * mV/sqrt(q2) * (wc['a']-wc['ap']) * ff['A12']
     H['pl','V'] = 1j/(2 * (mB+mV)) * (+(wc['v']+wc['vp']) * sqrt(laB) * ff['V']-(mB+mV)**2 * (wc['v']-wc['vp']) * ff['A1'])+1j * mqh/q2 * (+(wc['7']+wc['7p']) * sqrt(laB) * ff['T1']-(wc['7']-wc['7p']) * (mB**2-mV**2) * ff['T2'])
     H['mi','V'] = 1j/(2 * (mB+mV)) * (-(wc['v']+wc['vp']) * sqrt(laB) * ff['V']-(mB+mV)**2 * (wc['v']-wc['vp']) * ff['A1'])+1j * mqh/q2 * (-(wc['7']+wc['7p']) * sqrt(laB) * ff['T1']-(wc['7']-wc['7p']) * (mB**2-mV**2) * ff['T2'])
